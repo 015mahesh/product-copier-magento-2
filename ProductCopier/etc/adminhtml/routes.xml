@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     MP\ProductCopier
+ * @version     1.0.0
+ * @author      Mahesh Patel
+ * @copyright   Copyright © 2021 Mahesh Patel.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route frontName="productcopier" id="productcopier">
+            <module name="MP_ProductCopier" before="Magento_Backend" />
+        </route>
+    </router>
+</config>

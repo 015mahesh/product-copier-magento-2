@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     MP\ProductCopier
+ * @version     1.0.0
+ * @author      Mahesh Patel
+ * @copyright   Copyright © 2021 Mahesh Patel.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+      <mp_product_copier>
+           <developer>
+                  <cron_expression>*/5 * * * *</cron_expression>
+           </developer>
+     </mp_product_copier>
+    </default>
+</config>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     MP\ProductCopier
+ * @version     1.0.0
+ * @author      Mahesh Patel
+ * @copyright   Copyright © 2021 Mahesh Patel.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mp_pro_copier" translate="label" sortOrder="300">
+            <label>MP Product Copier</label>
+        </tab>
+        <section id="mp_product_copier" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>MP Product Copier Configuration</label>
+            <tab>mp_pro_copier</tab>
+            <resource>MP_ProductCopier::config</resource>
+            <group id="general" type="text" translate="label" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled, It will make copies of simple products</comment>
+                </field>
+            </group>
+            <group id="developer" type="text" translate="label" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Developer Options</label>
+                <field id="enable_cron" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Cron</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If enabled, Crons will be run as per expression below.</comment>
+                </field>
+                <field id="cron_expression" translate="label comment" sortOrder="50" type="text" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cron Expression</label>
+                    <comment>Example: */5 * * * * (Every 5 Minute)</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

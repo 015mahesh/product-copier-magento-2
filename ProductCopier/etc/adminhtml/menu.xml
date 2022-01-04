@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     MP\ProductCopier
+ * @version     1.0.0
+ * @author      Mahesh Patel
+ * @copyright   Copyright © 2021 Mahesh Patel.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+       <add id="MP_ProductCopier::process_queue"
+             title="Product Copier Batch Report"
+             translate="title"
+             module="MP_ProductCopier"
+             sortOrder="90"
+             resource="MP_ProductCopier::copier_process"
+             parent="Magento_Catalog::catalog"
+        />
+        <add id="MP_ProductCopier::copier_process"
+          title="View Report"
+          module="MP_ProductCopier" 
+          sortOrder="200" 
+          parent="MP_ProductCopier::process_queue" 
+          action="productcopier/report/index/" 
+          resource="MP_ProductCopier::copier_process"/>
+    </menu>
+</config>

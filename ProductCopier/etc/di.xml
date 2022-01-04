@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     MP\ProductCopier
+ * @version     1.0.0
+ * @author      Mahesh Patel
+ * @copyright   Copyright © 2021 Mahesh Patel.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="mp::duplicate_catalog" xsi:type="object">MP\ProductCopier\Console\Command\DuplicateCatalog</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="productcopier_report_listing_data_source" xsi:type="string">MP\ProductCopier\Model\ResourceModel\Queue\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="MP\ProductCopier\Model\ResourceModel\Queue\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mp_product_copier_queue_list</argument>
+            <argument name="resourceModel" xsi:type="string">MP\ProductCopier\Model\ResourceModel\Queue</argument>
+        </arguments>
+    </virtualType>
+</config>

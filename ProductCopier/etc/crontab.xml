@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+ /**
+ * @package     MP\ProductCopier
+ * @version     1.0.0
+ * @author      Mahesh Patel
+ * @copyright   Copyright © 2021 Mahesh Patel.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job instance="MP\ProductCopier\Cron\RunProductCopyierQueue" method="execute" name="mp_run_product_copier_queue">
+            <config_path>mp_product_copier/developer/cron_expression</config_path>
+        </job>
+    </group>
+</config>
